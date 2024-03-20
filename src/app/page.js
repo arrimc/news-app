@@ -4,12 +4,13 @@ import { getPosts } from "@/apis/getPosts";
 import { List } from "@/components/List";
 import { getUsers } from "@/apis/getUsers";
 import { Search } from "@/components/Search";
+import { Header } from "@/components/Header";
 
 export default function Home() {
 
-  //posts data
+  //posts data State
   const [postData, setPostData] = useState([]);
-  //search
+  //search State
   const [search, setSearch] = useState("");
 
 
@@ -32,8 +33,6 @@ export default function Home() {
 
   const handleGetPosts = () => {
     getPosts().then((data) => {
-      // localStorage.setItem('postData', JSON.stringify(data));
-      // setPostData(data);
       getUsers().then((users) => {
         //get posts and users
         const postDataWithUsers = data.map((post) => {
@@ -61,17 +60,18 @@ export default function Home() {
     setPostData(coincidences);
     if (!phrase.length) { //if search input is empty, get all data form localestorage
       const storedData = localStorage.getItem("postData");
-        setPostData(JSON.parse(storedData));
-      
+      setPostData(JSON.parse(storedData));
     }
   }
 
   return (
+    <>
+    <Header/>
     <main>
       <h1>News</h1>
       <div className="main_container">
-      <div className="search_field">
-          <Search handleSearch={handleSearch}/>
+        <div className="search_field">
+            <Search handleSearch={handleSearch}/>
         </div>
         <div className="all_posts">
           <List postData={postData} />
@@ -79,5 +79,6 @@ export default function Home() {
       </div>
       
     </main>
+    </>
   );
 }

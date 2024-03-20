@@ -1,13 +1,16 @@
+import Link from 'next/link';
 import React from 'react';
 
 export const List = ({ postData }) => {
   return (
-    <>               
+    <>     
       {postData.map(({id, user, title}) => ( 
-        <div key={id}>
-          <h2 className='post-title'>{title}</h2>
+        <article key={id}>
+          <Link href={`/news/${title}`}>
+            <h2 className='post-title'>{title}</h2>
+          </Link>
           <span className='post-author'>{user.name}</span>
-        </div>
+        </article>
       ))}
     </>
   );
