@@ -1,19 +1,22 @@
 import React from "react";
+import styles from "../styles/Search.module.css"
 
 export const Search = ({ handleSearch }) => {
 
   return (
     <>
+    <div className={styles.container}>
       <form>
-        <label htmlFor="search_field">Search</label>
         <input
           id="search_field"
           name="search_field"
           type="text"
-          placeholder="search"
+          className={styles.search}
+          placeholder="Search"
           onChange={handleSearch}
         ></input>
       </form>
+    </div>
     </>
   );
 };

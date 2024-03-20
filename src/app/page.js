@@ -13,7 +13,6 @@ export default function Home() {
   //search State
   const [search, setSearch] = useState("");
 
-
   useEffect(() => {
     const storedData = localStorage.getItem("postData");
     if (storedData) {
@@ -68,16 +67,17 @@ export default function Home() {
     <>
     <Header/>
     <main>
-      <h1>News</h1>
-      <div className="main_container">
-        <div className="search_field">
-            <Search handleSearch={handleSearch}/>
-        </div>
-        <div className="all_posts">
+      <div className="container mx-auto">
+        <h1>News</h1>
+        <div className="main_container">
+          
+          <Search handleSearch={handleSearch}/>
+         <section className="flex">
           <List postData={postData} />
+          <div></div>
+         </section>
         </div>
       </div>
-      
     </main>
     </>
   );

@@ -1,11 +1,13 @@
 'use client'
 
+import { NewsDetails } from "@/components/NewsDetails"
+
 function Page(){
 
   return (
     <div>
       <h1>Test</h1>
-      <p>test </p>
+      <NewsDetails/>
     </div>
   )
 }

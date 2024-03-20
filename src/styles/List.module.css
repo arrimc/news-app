@@ -1,0 +1,22 @@
+.articles {
+    padding: 2rem 1rem;
+    background-color: #fff;
+    box-shadow: 1px 1px 9px #e9e8e8;
+    margin-bottom: 2rem;
+}
+
+.post_title {
+    font-size: 20px;
+    padding-bottom: 20px;
+    color: #0a3740;
+    font-weight: bold;
+    cursor: pointer;
+    line-height: 1.2;
+}
+
+.post_author {
+    display: block;
+    width: fit-content;
+    color: #258a60;
+    transition: .3s;
+}

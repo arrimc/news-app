@@ -1,0 +1,11 @@
+.container {
+    width: fit-content;
+    margin: 0 0 0 auto;
+}
+
+.search {
+    height: 45px;
+    padding: 10px 15px;
+    border-radius: 20px;
+    border: 1px solid #dedede;
+}
