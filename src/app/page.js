@@ -50,7 +50,7 @@ export default function Home() {
     const phrase = e.target.value;
     setSearch(phrase); //set input value
     const coincidences = postData.filter((word) => {
-      //filter options:
+    //filter options:
     const filterTitle = word.title.toLowerCase().includes(phrase.toLowerCase());
     const filterAuthorName = word.user.name.toLowerCase().includes(phrase.toLowerCase());
       return filterTitle || filterAuthorName;
@@ -72,10 +72,8 @@ export default function Home() {
         <div className="main_container">
           
           <Search handleSearch={handleSearch}/>
-         <section className="flex">
           <List postData={postData} />
-          <div></div>
-         </section>
+          
         </div>
       </div>
     </main>
